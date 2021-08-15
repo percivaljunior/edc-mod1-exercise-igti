@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "dl" {
-  bucket = "${var.base_bucket_name}-${var.ambiente}-${var.numero_conta}"
+  bucket = "datalake-percival-igti-edc-tf"
   acl    = "private"
 
   server_side_encryption_configuration {
