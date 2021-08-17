@@ -5,18 +5,18 @@ spark = (
     .getOrCreate()
 )
 
-enem = (
+censo = (
     spark
     .read
     .format("csv")
     .option("header", True)
     .option("inferSchema", True)
-    .option("delimiter", ";")
+    .option("delimiter", "|")
     .load("s3://terraform-state-igti-percival/raw-data/censo_escolar/")
 )
 
 (
-    enem
+    censo
     .write
     .mode("overwrite")
     .format("parquet")
