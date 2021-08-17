@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "dl" {
-  bucket = "datalake-percival-igti-edc-tf"
+  bucket = "datalake-percival-igti-tf"
   acl    = "private"
 
   server_side_encryption_configuration {

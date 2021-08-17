@@ -1,4 +1,3 @@
-from pyspark.sql.functions import mean, max, min, col, count
 from pyspark.sql import SparkSession
 
 spark = (
@@ -14,9 +13,8 @@ enem = (
     .option("header", True)
     .option("inferSchema", True)
     .option("delimiter", ";")
-    .load("s3://datalake-percival-igti/raw-data/enem/")
+    .load("s3://terraform-state-igti-percival/raw-data/censo_escolar/")
 )
-
 
 (
     enem
@@ -24,5 +22,5 @@ enem = (
     .mode("overwrite")
     .format("parquet")
     .partitionBy("year")
-    .save("s3://datalake-percival-igti/staging/enem")
+    .save("s3://datalake-percival-igti-tf/staging/censo_escolar")
 )
