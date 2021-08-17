@@ -5,7 +5,6 @@ spark = (
     .getOrCreate()
 )
 
-# Ler os dados do enem 2019
 enem = (
     spark
     .read
