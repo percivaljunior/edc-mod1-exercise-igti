@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "dl" {
-  bucket = "terraform-state-igti-percival"
+  bucket = "datalake-percival-igti-tf"
   acl    = "private"
 
   server_side_encryption_configuration {
