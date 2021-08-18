@@ -1,17 +1,9 @@
-import sys
-from awsglue.utils import getResolvedOptions
-from pyspark.context import SparkContext
-from awsglue.context import GlueContext
-from awsglue.job import Job
+from pyspark.sql import SparkSession
 
-## @params: [GLUE_JOB_SPARK]
-args = getResolvedOptions(sys.argv, ['GLUE_JOB_SPARK'])
-
-sc = SparkContext()
-glueContext = GlueContext(sc)
-spark = glueContext.spark_session
-job = Job(glueContext)
-job.init(args['GLUE_JOB_SPARK'], args)
+spark = (
+    SparkSession.builder.appName("ExerciseSpark")
+    .getOrCreate()
+)
 
 # Ler os dados do censo escolar 2020
 censo = (
