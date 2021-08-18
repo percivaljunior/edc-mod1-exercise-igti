@@ -21,5 +21,5 @@ censo = (
     .mode("overwrite")
     .format("parquet")
     .partitionBy("year")
-    .save("s3://datalake-percival-igti-tf/staging/censo_escolar")
+    .save("s3://terraform-state-igti-percival/staging/censo_escolar")
 )
