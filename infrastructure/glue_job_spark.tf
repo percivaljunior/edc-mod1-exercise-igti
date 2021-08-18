@@ -1,5 +1,5 @@
-resource "aws_glue_job" "glue_job_spark" {
-  name     = "glue_job_spark"
+resource "aws_glue_job" "GLUE_JOB_SPARK" {
+  name     = "GLUE_JOB_SPARK"
   role_arn = "arn:aws:iam::449441604967:role/glue-s3-percival"
 
   command {
